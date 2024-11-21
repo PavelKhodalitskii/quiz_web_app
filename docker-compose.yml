@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  php:
+    restart: always
+    build:
+      .
+    ports:
+      - "8082:8082"
+    volumes:
+      - .:/quiz

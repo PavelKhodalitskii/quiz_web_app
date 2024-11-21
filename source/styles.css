@@ -1,0 +1,95 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30pt;
+    color: white;
+    text-align: center;
+}
+
+input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #373b3f;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid white;
+    font-size: 14pt;
+    padding-left: 3%;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    height: 100vh;
+    background: linear-gradient(to top right, #00ff2a, #ff6f00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.greetings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    min-height: 300px;
+    min-width: 300px;
+    margin: 0, auto;
+    border-radius: 20px;
+    background-color: #161b22;
+    height: 30%;
+    width: 40%;
+}
+
+.name_input {
+    min-width: 225px;
+    min-height: 50px;
+    width: 60%;
+    height: 20%;
+}
+
+.start_button {
+    text-align: center;
+    min-height: 50px;
+    min-width: 100px;
+    height: 20%;
+    width: 20%;
+    border: 0px;
+    padding-left: 6px;
+}
+
+.start_button:hover {
+    height: 22%;
+    width: 22%;
+    padding-left: 6px;
+    border: 0px;
+    background-color: #2fa61b;
+    font-weight: bold;
+    color:#161b22
+}
+
+@media screen and (max-width: 1000px) {
+    input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #373b3f;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        border: 1px solid white;
+        font-size: 14pt;
+        padding-left: 3%;
+    }
+}
