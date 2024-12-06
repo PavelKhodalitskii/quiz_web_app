@@ -177,12 +177,28 @@ form {
     align-items: flex-start;
 }
 
-.answer_container {
+.answer_button {
     width: 70%;
+    height: 40px;
     border-radius: 10px;
+    border-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
-.answer_container:hover {
+.answer_button_selected {
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+    background-color: #31cf16;
+}
+
+.answer_button:hover {
     color: black;
     background-color:#31cf16;
 }
@@ -230,5 +246,11 @@ form {
         width: 100%;
     }
 
+    .answer_button {
+        width: 100%;
+    }
 
+    .answer_button_selected {
+        width: 100%;
+    }
 }
