@@ -2,8 +2,12 @@
     require_once('quiz_base.php');
     require_once('config.php');
 
-    $name = $_POST['name'];
-    $question_number = $_POST['question_number'];
+    $name = $_POST["name"];
+    if (isset($_POST['question_number'])) {
+        $question_number = $_POST['question_number'];
+    } else {
+        $question_number = 1;
+    }
 
     
     if (isset($_POST['questions']) && isset($_POST['answers'])) {
@@ -34,22 +38,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Квиз! Насколько ты плохой веб-программист</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
 </head>
-<body>
-    <div class="background">
+    <div class="test_cont">
         <div class="question" id="question">
             <form id="question_form" method='post' action='question.php'>
-            <input type="hidden" name="name" value=<?php echo $name?>>
-            <input type="hidden" name="question_number" value=<?php echo intval($question_number) + 1; ?>>
+                <input type="hidden" name="name" value=<?php echo $name?>> 
+                <input type="hidden" name="question_number" value=<?php echo intval($question_number) + 1; ?>>
             </form>
         </div>
     </div>
-</body>
 </html>
 
 <script>

@@ -60,7 +60,4 @@
             return $new_question;
         }
     }
-
-    function check_correctness($answers) {
-    }
 ?>

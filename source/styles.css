@@ -1,9 +1,6 @@
 body {
     padding: 0;
     margin: 0;
-    background: linear-gradient(to top right, #00ff2a, #ff6f00, #ff5e00, #ff0080, #cc00ff);
-    background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
 }
 
 @keyframes gradient {
@@ -38,6 +35,12 @@ input {
     padding-left: 3%;
 }
 
+iframe {
+    border-style: none;
+    height: 100%;
+    width: 70%;
+}
+
 label {
     font-family: 'Roboto', sans-serif;
     font-size: 14pt;
@@ -70,6 +73,15 @@ form {
     background: linear-gradient(to top right, #00ff2a, #ff6f00);
 } */
 
+.test_cont {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .greetings {
     display: flex;
     flex-direction: column;
@@ -81,7 +93,7 @@ form {
     border-radius: 20px;
     background-color: #161b22;
     height: 30%;
-    width: 40%;
+    width: 50%;
 }
 
 .name_input {
@@ -102,25 +114,11 @@ form {
 }
 
 .start_button:hover {
-    /* height: 22%;
-    width: 22%; */
     padding-left: 6px;
     border: 0px;
     background-color: #31cf16;
     font-weight: bold;
     color:#161b22
-}
-
-/* Для списоковго представления */
-.questions_form {
-    margin-left: 15%;
-    align-items: normal;
-}
-
-/* Для списоковго представления */
-.questions_list {
-    display: flex;
-    flex-direction: column;
 }
 
 .question {
@@ -133,7 +131,7 @@ form {
     background-color: #161b22;
     color: white;
     height: 600px;
-    width: 60%;
+    width: 50%;
     min-width: 350px;
     border-radius: 30px;
 }
@@ -218,6 +216,10 @@ form {
 }
 
 @media screen and (max-width: 1000px) {
+    iframe {
+        width: 100%;
+    }
+
     input {
         margin-top: 10px;
         margin-bottom: 10px;
