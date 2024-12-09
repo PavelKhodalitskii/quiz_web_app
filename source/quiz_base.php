@@ -1,6 +1,4 @@
 <?php
-    require_once('config.php');
-
     class Answer {
         public $id;
         public $text = "";
@@ -13,6 +11,7 @@
     }
 
     class Question {
+        public static $questions = array();
         public $id;
         public $text;
         public $answers;
@@ -22,25 +21,43 @@
             $this->id = $id;
             $this->text = $text;
             $this->answers = $answers;
+
+            for ($i = 0; $i < count(Question::$questions); $i++) {
+                if (Question::$questions[$i]['id'] == $id) {
+                    unset(Question::$questions[$i]);
+                }
+            }
         }
 
         public static function get_next_question($previous_question_ids=null) {
-            $next_question = random_int(0, 255);
-
-            $path = sprintf("%s/questions/questions.json", $DATA_STORE_PATH);
-            $questions_json = file_get_contents($path);
+            if (count(Question::$questions) == 0) {
+                $path = "data/questions/questions.json";
+                $questions_json = file_get_contents($path);
             
-            if ($questions_json === false) {
-                die('Error reading the JSON file');
+                if ($questions_json === false) {
+                    die('Error reading the JSON file');
+                }
+
+                $question_json_data = json_decode($questions_json, true);
+
+                foreach ($question_json_data as $question_json) {
+                    array_push(Question::$questions, $question_json);
+                }
             }
 
-            $question_json_data = json_decode($json, true);
+            $next_question_id = array_rand(Question::$questions);
+            $next_question = Question::$questions[$next_question_id];
+            
+            $answers_json = $next_question['answers'];
+            $answers = array();
 
-            foreach ($question_json_data as $question_json) {
-                echo $question_json;
+            foreach ($answers_json as $answer) {
+                $new_answer = new Answer($id=$answer['id'], $text=$answer['text']);
+                array_push($answers, $new_answer);
             }
 
-            return new Question(1, "Виталий вы бизнесмэн?", array(new Answer(1, 'Да'), new Answer(2, 'Пэльмээнь'), new Answer(3, 'Три'), new Answer(4, 'Четыре'), new Answer(5, 'Пять'), new Answer(6, 'Шесть')));
+            $new_question = new Question($id=$next_question['id'], $text=$next_question['text'], $answers=$answers);
+            return $new_question;
         }
     }
 
