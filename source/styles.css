@@ -35,6 +35,13 @@ input {
     padding-left: 3%;
 }
 
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    max-height: 50px;
+}
+
 iframe {
     border-style: none;
     height: 100%;
@@ -47,6 +54,23 @@ label {
     color: white;
     text-align: center;
 }
+
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+    color: white;
+    text-align: center;
+}
+
+b {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
 
 form {
     height: 100%;
@@ -94,6 +118,31 @@ form {
     background-color: #161b22;
     height: 30%;
     width: 50%;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 500px;
+    min-width: 300px;
+    margin: 0, auto;
+    border-radius: 20px;
+    color: white;
+    background-color: #161b22;
+    height: 600px;
+    width: 50%;
+}
+
+.result h1 {
+    font-size: 22pt;
+}
+
+#resultsDia {
+    border-radius: 20px;
+    background-color: #373b3f;
+    height: 250px;
+    width: 300px;
 }
 
 .name_input {
@@ -214,6 +263,7 @@ form {
 .form_div div {
     margin-left: 0;
 }
+
 
 @media screen and (max-width: 1000px) {
     iframe {

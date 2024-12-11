@@ -2,6 +2,7 @@
     require_once('quiz_base.php');
     require_once('config.php');
 
+    $next = "question.php";
     $name = $_POST["name"];
     if (isset($_POST['question_number'])) {
         $question_number = $_POST['question_number'];
@@ -9,29 +10,19 @@
         $question_number = 1;
     }
 
-    
     if (isset($_POST['questions']) && isset($_POST['answers'])) {
-        $questions = json_decode($_POST['questions']);
+        $questions = json_decode($_POST['questions'], TRUE);
         $answers = json_decode($_POST['answers']);
     } else {
         $questions = array();
         $answers = array();
     }
 
-    if (intval($question_number) > $MAX_QUESTIONS) {
-        // header("Location: result.php");
-        $myCurl = curl_init();
-        curl_setopt_array($myCurl, array(
-            CURLOPT_URL => 'result.php',
-            CURLOPT_POST => TRUE,
-            CURLOPT_FOLLOWLOCATION => TRUE,
-            CURLOPT_POSTFIELDS => http_build_query(array("name" => $name, "questions" => $questions, "answers" => $answers)),
-        ));
-        $response = curl_exec($myCurl);
-        die();
+    if (intval($question_number) >= $MAX_QUESTIONS) {
+        $next="result.php";
     }
 
-    $current_question = Question::get_next_question()
+    $current_question = Quiz::get_next_question($questions)
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +35,7 @@
 </head>
     <div class="test_cont">
         <div class="question" id="question">
-            <form id="question_form" method='post' action='question.php'>
+            <form id="question_form" method='post' action=<?php echo $next?>>
                 <input type="hidden" name="name" value=<?php echo $name?>> 
                 <input type="hidden" name="question_number" value=<?php echo intval($question_number) + 1; ?>>
             </form>
@@ -87,12 +78,14 @@
 
     const questionNumber = <?php echo $question_number; ?>;
     const currentQuestion = <?php echo json_encode($current_question); ?>;
+
     const questionForm = document.getElementById('question_form');
     questionForm.innerHTML += `<div class="question_number"><span>Вопрос №${questionNumber}</span></div>`;
     questionForm.innerHTML += `<strong>${currentQuestion.text}</strong>`;
 
     const formDiv = document.createElement('div');
     formDiv.className = "form_div";
+
     const answerListContiner = document.createElement('div');
     answerListContiner.className = "answers_list_continer"  
 
@@ -107,7 +100,8 @@
         });
         answerListContiner.appendChild(answerButton);
     }
-    formDiv.appendChild(answerListContiner)
+
+    formDiv.appendChild(answerListContiner);
     const nextQuestionButton = document.createElement('input');
     nextQuestionButton.type = 'submit';
     nextQuestionButton.value = 'Далее';
@@ -132,6 +126,7 @@
 
         this.submit();
     });
+    
     formDiv.appendChild(nextQuestionButton)
     questionForm.appendChild(formDiv);
 </script>
