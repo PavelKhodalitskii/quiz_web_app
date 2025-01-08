@@ -3,6 +3,19 @@ body {
     margin: 0;
 }
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 h1 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 30pt;
@@ -22,6 +35,43 @@ input {
     padding-left: 3%;
 }
 
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    max-height: 50px;
+}
+
+iframe {
+    border-style: none;
+    height: 100%;
+    width: 70%;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+    color: white;
+    text-align: center;
+}
+
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+    color: white;
+    text-align: center;
+}
+
+b {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+
 form {
     height: 100%;
     width: 100%;
@@ -33,8 +83,25 @@ form {
 
 .background {
     height: 100vh;
-    background: linear-gradient(to top right, #00ff2a, #ff6f00);
+    background: linear-gradient(to top right, #00ff2a, #ff6f00, #ff5e00, #ff0080, #cc00ff);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+}
+
+/* .test_bg {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(to top right, #00ff2a, #ff6f00);
+} */
+
+.test_cont {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -50,7 +117,32 @@ form {
     border-radius: 20px;
     background-color: #161b22;
     height: 30%;
-    width: 40%;
+    width: 50%;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 500px;
+    min-width: 300px;
+    margin: 0, auto;
+    border-radius: 20px;
+    color: white;
+    background-color: #161b22;
+    height: 600px;
+    width: 50%;
+}
+
+.result h1 {
+    font-size: 22pt;
+}
+
+#resultsDia {
+    border-radius: 20px;
+    background-color: #373b3f;
+    height: 250px;
+    width: 300px;
 }
 
 .name_input {
@@ -71,16 +163,113 @@ form {
 }
 
 .start_button:hover {
-    height: 22%;
-    width: 22%;
     padding-left: 6px;
     border: 0px;
-    background-color: #2fa61b;
+    background-color: #31cf16;
     font-weight: bold;
     color:#161b22
 }
 
+.question {
+    /* Для списоковго представления */
+    margin-top: 20px;
+    margin-bottom: 20px; 
+
+    display: flex;
+    flex-direction: column;
+    background-color: #161b22;
+    color: white;
+    height: 600px;
+    width: 50%;
+    min-width: 350px;
+    border-radius: 30px;
+}
+
+.question_number {
+    padding-left: 5%;
+    width: 95%;
+
+    height: 8%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15pt;
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    /* margin-top: 15px; */
+} 
+
+.question strong {
+    padding-left: 5%;
+    width: 95%;
+
+    height: 40%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20pt;
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.question input {
+    margin-top: 10px;
+}
+
+.answers_list_continer {
+    width: 70%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.answer_button {
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.answer_button_selected {
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+    background-color: #31cf16;
+}
+
+.answer_button:hover {
+    color: black;
+    background-color:#31cf16;
+}
+
+.form_div {
+    width: 100%;
+
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.form_div div {
+    margin-left: 0;
+}
+
+
 @media screen and (max-width: 1000px) {
+    iframe {
+        width: 100%;
+    }
+
     input {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -91,5 +280,29 @@ form {
         border: 1px solid white;
         font-size: 14pt;
         padding-left: 3%;
+    }
+
+    .questions_list {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+
+    .answer_button {
+        width: 100%;
+    }
+
+    .answer_button_selected {
+        width: 100%;
     }
 }

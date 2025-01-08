@@ -10,13 +10,7 @@
 </head>
 <body>
     <div class="background">
-        <div class="greetings">
-            <h1>Введите своё имя:</h1>        
-            <form class="name_form" action="quiz.php" method="post">
-                <input class="name_input" name="name" id="name" type="text" value="Альберт">
-                <input class="start_button" type="submit" value="Начать">
-            </form>
-        </div>
+        <iframe src="name_form.php"></iframe>
     </div>
 </body>
 </html>

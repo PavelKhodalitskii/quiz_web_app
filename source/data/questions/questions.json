@@ -1,0 +1,218 @@
+{
+    "1": {
+        "id": "1",
+        "text": "2 + 2",
+        "answers": {
+            "11": {
+                "id": "11",
+                "text": "4",
+                "correct": true
+            },
+            "12": {
+                "id": "12",
+                "text": "3",
+                "correct": false
+            },
+            "13": {
+                "id": "13",
+                "text": "2",
+                "correct": false
+            },
+            "14": {
+                "id": "14",
+                "text": "4",
+                "correct": true
+            },
+            "15": {
+                "id": "15",
+                "text": "2",
+                "correct": false
+            },
+            "16": {
+                "id": "16",
+                "text": "1",
+                "correct": false
+            }
+        }
+    },
+    "2": {
+        "id": "2",
+        "text": "Вопрос 2",
+        "answers": {
+            "21": {
+                "id": "21",
+                "text": "Ответ 1",
+                "correct": true
+            },
+            "22": {
+                "id": "22",
+                "text": "Ответ 2",
+                "correct": false
+            },
+            "23": {
+                "id": "23",
+                "text": "Ответ 3",
+                "correct": false
+            },
+            "24": {
+                "id": "24",
+                "text": "Ответ 4",
+                "correct": false
+            },
+            "25": {
+                "id": "25",
+                "text": "Ответ 5",
+                "correct": false
+            },
+            "26": {
+                "id": "26",
+                "text": "Ответ 6",
+                "correct": false
+            }
+        }
+    },
+    "3": {
+        "id": "3",
+        "text": "Вопрос 3",
+        "answers": {
+            "31": {
+                "id": "31",
+                "text": "Ответ 1",
+                "correct": true
+            },
+            "32": {
+                "id": "32",
+                "text": "Ответ 2",
+                "correct": false
+            },
+            "33": {
+                "id": "33",
+                "text": "Ответ 3",
+                "correct": false
+            },
+            "34": {
+                "id": "34",
+                "text": "Ответ 4",
+                "correct": false
+            },
+            "35": {
+                "id": "35",
+                "text": "Ответ 5",
+                "correct": false
+            },
+            "36": {
+                "id": "36",
+                "text": "Ответ 6",
+                "correct": false
+            }
+        }
+    },
+    "4": {
+        "id": "4",
+        "text": "Вопрос 4",
+        "answers": {
+            "41": {
+                "id": "41",
+                "text": "Ответ 1",
+                "correct": true
+            },
+            "42": {
+                "id": "42",
+                "text": "Ответ 2",
+                "correct": false
+            },
+            "43": {
+                "id": "43",
+                "text": "Ответ 3",
+                "correct": false
+            },
+            "44": {
+                "id": "44",
+                "text": "Ответ 4",
+                "correct": false
+            },
+            "45": {
+                "id": "45",
+                "text": "Ответ 5",
+                "correct": false
+            },
+            "46": {
+                "id": "46",
+                "text": "Ответ 6",
+                "correct": false
+            }
+        }
+    },
+    "5": {
+        "id": "5",
+        "text": "Вопрос 5",
+        "answers": {
+            "51": {
+                "id": "51",
+                "text": "Ответ 1",
+                "correct": true
+            },
+            "52": {
+                "id": "52",
+                "text": "Ответ 2",
+                "correct": false
+            },
+            "53": {
+                "id": "53",
+                "text": "Ответ 3",
+                "correct": false
+            },
+            "54": {
+                "id": "54",
+                "text": "Ответ 4",
+                "correct": false
+            },
+            "55": {
+                "id": "55",
+                "text": "Ответ 5",
+                "correct": false
+            },
+            "56": {
+                "id": "56",
+                "text": "Ответ 6",
+                "correct": false
+            }
+        }
+    },
+    "6": {
+        "id": "6",
+        "text": "Вопрос 6",
+        "answers": {
+            "61": {
+                "id": "61",
+                "text": "Ответ 1",
+                "correct": true
+            },
+            "62": {
+                "id": "62",
+                "text": "Ответ 2",
+                "correct": false
+            },
+            "63": {
+                "id": "63",
+                "text": "Ответ 3",
+                "correct": false
+            },
+            "64": {
+                "id": "64",
+                "text": "Ответ 4",
+                "correct": false
+            },
+            "65": {
+                "id": "65",
+                "text": "Ответ 5",
+                "correct": false
+            },
+            "66": {
+                "id": "66",
+                "text": "Ответ 6",
+                "correct": false
+            }
+        }
+    }
+}
